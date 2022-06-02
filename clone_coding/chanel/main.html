@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANEL</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="/code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
+</head>
+<body>
+    <header>
+        <div class="common-inner">
+            <h1 class="logo">
+                <a href="#">
+                    <svg aria-hidden="true" class="logo" data-test="imgLogo" focusable="false" height="28" width="175" viewBox="0 0 175 28">
+                        <g fill="#000" fill-rule="evenodd">
+                           <path d="M20.655 17.726l4.565 2.615c-2.282 4.197-6.737 6.922-11.781 6.922C6.075 27.263 0 21.629 0 13.713S6.075.163 13.439.163c5.044 0 9.5 2.725 11.781 6.923L20.655 9.7c-1.326-2.725-4.013-4.381-7.216-4.381-4.603 0-8.1 3.423-8.1 8.394s3.497 8.395 8.1 8.395c3.203 0 5.89-1.657 7.216-4.382M49.705 26.6V15.554H36.818V26.6h-5.154V.826h5.154V10.4h12.887V.826h5.155V26.6h-5.155M79.603 15.922L74.926 5.061 70.25 15.922h9.353zM89.838 26.6h-5.634l-2.54-5.892H68.188l-2.54 5.892h-5.634L71.428.826h6.996L89.838 26.6zM113.586 26.6L99.778 6.313V26.6h-4.786V.826h6.812l11.598 17.084V.826h4.787V26.6h-4.603M128.129 26.6V.826h18.41v4.787h-13.624v5.523h11.782v4.786h-11.782v5.892h14.36V26.6h-19.146M155.56 26.6V.826h5.154v20.62h13.622V26.6H155.56"></path>
+                        </g>
+                     </svg>
+                </a>
+            </h1>
+            <nav class="gnb-wrap">
+                <ul class="gnb-list">
+                    <li><a href="#">샤넬뷰티</a></li>
+                    <li><a href="#">르 블랑</a></li>
+                    <li><a href="#">레 베쥬</a></li>
+                    <li><a href="#">루쥬알뤼르</a></li>
+                    <li><a href="#">부티크 서비스</a></li>
+                </ul>
+            </nav>
+            <div class="util">
+                <a href="#" class="search">SEARCH</a>
+                <a href="#" class="cart">CART<span class="num">1</span></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="sc-visual">
+            <div class="txt-box">
+                <em class="sub-title">La Pausa de CHANEL</em>
+                <h2 class="title">The Essense of A <b>Woman</b></h2>
+                <p class="desc">눈부시게 빛나는 리비에라를 닮은 메이크업 룩</p>
+            </div>
+            <div class="img_box vertical slider"> <!-- slider 태그 필수, slick 관련 css와 js 넣어야함 -->
+                <div><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4aad33115883577.6057540126804.jpg" alt=""></div>
+                <div><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e9fc1f77615731.5c8cba83e5aa8.jpg" alt=""></div>
+            </div>
+        </section>
+        <section class="sc-natural">
+            <h2 class="sc-title">A new style of natural makeup</h2>
+        </section>
+       <section class="sc_beauty">
+            <div class="txt_wrap">
+                <h2 class="title">BEAUTY</h2>
+                <p class="desc">자연은 모든 생명의 근원입니다. 샤넬 스킨케어는 그 시작부터 생명의 비밀을 담고 있는 위대한 자연에서 영감을 받은 제품을 만들어왔습니다.
+                    스킨케어와 메이크업, 프래그런스로 이루어진 <em class="en">N°1 DE CHANEL</em>을 만나보세요.
+                    놀라운 활력 에너지를 충전하는 레드 까멜리아 추출물과 지속가능성에 대한 철학이 담긴 홀리스틱 안티 에이징 라인입니다.
+                </p>
+            </div>
+            <div class="prd-wrap">
+                <ul class="prd-list"><!--여기서부터 하면 됨-->
+                    <li class="prd-item"><a href="#"><img></a></li>
+                </ul>
+            </div>
+       </section>
+    </main>
+</body>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="main.js"></script>
+<script>
+   $(".vertical").slick({
+        dots: true,
+        vertical: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 300, //슬라이드 속도 
+	    autoplaySpeed : 10000, // 자동 넘김시 슬라이드 시간 
+      });
+</script>
+</html>
