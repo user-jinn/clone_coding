@@ -25,6 +25,7 @@ header .common-inner{display: flex; justify-content: space-between; position: re
 header .logo        {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 header .gnb-list    {display: flex;}
 header .gnb-list li {font-weight: 600; transition: opacity 0.3s;}
+header .gnb-list li:hover {opacity: 0.4;}
 header .gnb-list li + li    {margin-left: 30px;}
 
 header .util        {display: flex; }
