@@ -5,6 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>flipping</title>
+    <style>
+        * {border:0; margin: 0; box-sizing: border-box;}
+        :root {--mobile-width: 325px; --mobile-height: 670px; --mobile-radius: 25px; --seperator-height: 500px; --bg: #fdf3f2; --mobile-bg: #fdeae6; --intro-bg: #eed7d1; --font-color: #807b7b; --transition: transform 0.7s ease-in-out;}
+        
+        .container {min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: var(--bg);}
+        .info {font-family: 'Quicksand', sans-serif; font-family: 'Open Sans', sans-serif; font-style: italic; font-size: 26px; margin-top: 10px; color: var(--font-color);}
+
+        .mobile-layout {width: var(--mobile-width); height: var(--mobile-height); margin: 30px 0; border-radius: var(--mobile-radius); perspective: 500px; overflow: hidden; color: var(--font-color); background-color: var(--mobile-bg); box-shadow: 36px 36px 50px 15px #eed7d1d1;}  
+        .notification-header {position: fixed; top: 5px; width: 100%; padding: 5px 15px; display: flex; justify-content: space-between; font-size: 12px; font-family: 'Open Sans', sans-serif; font-weight: bold; z-index: 6;}
+        .actions {position:fixed; top: 37px; width: 100%; padding: 50px; display: flex; justify-content: space-between; font-size: 20px; z-index: 6;}
+        .book-cover {position: relative; height: var(--seperator-height); width: calc(var(--mobile-width) * 2); left: -52.5%; border-top-left-radius: var(--mobile-radius); border-top-right-radius: var(--mobile-radius); background: var(--intro-bg); transform-style: preserve-3d;}
+        .book-top {width: 170px; position: absolute; top: 180px; left: 250px; z-index: 5; transform: translateZ(28.5px);}
+        .book-side{position: absolute; top: 430px; left: 222px; transform: translateY(-15px) translateX(0px) translateZ(15px) rotate(104deg);}
+
+        .book-cover:hover {transform: rotateX(75deg) translateZ(3px) scale(0.75);}
+        .book-cover:hover + .preface {transform: translateY(-302px);}
+        .book-cover:hover + .preface .icon {transform: rotateX(180deg);}
+
+        .preface {height: var(--seperator-height); padding: 50px; transition: var(--transition); background: white;}
+        .preface .header {display: flex; align-items: center;}
+        .preface .title {font-family: 'Quicksand'; font-size: 26px; margin-bottom: 10px;}
+        .author {font-family: 'Open Sans', sans-serif; font-style: italic; margin-bottom: 20px;}
+        .preface .icon {transform-origin: top; transition: var(--transition);}
+        .preface .body {font-family: 'Quicksand', sans-serif;}
+        .preface .body p:first-child {margin-bottom: 15px;}
+    </style>
 </head>
 <body>
     <div class="container">
@@ -26,7 +52,21 @@
                 <img class="book-top" src="https://raw.githubusercontent.com/atomic-variable/images-repo/e37f432405904a280858e5437ce1960753bc78a3/book-top.svg" alt="book-top" />
                 <img class="book-side" src="https://raw.githubusercontent.com/atomic-variable/images-repo/e37f432405904a280858e5437ce1960753bc78a3/book-side.svg" alt="book-side" /> 
             </div>
-            <div class="preface"></div>
+            <div class="preface">
+                <div class="content">
+                    <div class="header">
+                        <div class="title">The Diary of a Young Girl</div>
+                        <div class="icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="author">ny Anne Frank</div>
+                    <div class="body">
+                        <p>also known as The Diary of Anne Frank, is a book of the writings from the Dutch-language diary kept by Anne Frank while she was in hiding for two years with her family during the Nazi occupation of the Netherlands</p>
+                          <p>Anne calls her diary "Kitty", so almost all of the letters are written to Kitty.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

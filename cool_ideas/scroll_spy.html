@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll spy</title>
+    <style>
+        /* Global Styles */
+* {padding: 0; margin: 0; box-sizing: border-box;}
+body {font-size: 12px; font-weight: 400; font-family: 'Poppins', sans-serif; color: #333;}
+h1, h3 {padding-bottom: 15px;}
+.container {width: 1200px; height: 100%; margin: 0 auto;}
+.text-center {text-align: center;}
+.content-wrapper {width: 100%; height: 100%; margin: 0 auto; display: table;}
+.content {display: table-cell; vertical-align: middle;}
+/* End Global Styles */
+
+/* Start Nav Styles */
+.navbar {position: fixed; z-index: 999; top: 50%; right: 50px; transform: translateY(-50%);}
+.navbar .nav-menu {margin: 0; padding: 0; list-style-type: none;}
+.navbar .nav-menu li {position: relative; min-width: 200px; text-align: right; margin: 5px 0;}
+.navbar .nav-menu li .dot {display: block; color: #fff;}
+.navbar .nav-menu li .dot::before,
+.navbar .nav-menu li .dot::after {display: block; position: absolute; content: ''; border-radius: 50%; top: 50%; transition: all .3s ease;}
+.navbar .nav-menu li .dot::before {width: 5px; height: 5px; right: 0; border: 2px solid #888; transform: translateY(-50%);}
+.navbar .nav-menu li .dot::after {width: 15px; height: 15px; border: 2px solid #444; right: -5px; transform: translateY(-50%) scale(0);}
+.navbar .nav-menu li .dot.active::before,
+.navbar .nav-menu li:hover .dot::before {background: #444; border-color: #444;}
+.navbar .nav-menu li .dot.active::after,
+.navbar .nav-menu li:hover .dot::after {transform: translateY(-50%) scale(1);}
+.navbar .nav-menu li .dot span {display: inline-block; opacity: 0; text-transform: capitalize; background-color: #dfb9ec; padding: 8px 14px; border-radius: 3px; margin-right: 30px; transform: translateX(20px); transition: all .3s ease;}
+.navbar .nav-menu li .dot span::before {display: block; position: absolute; content: ''; border-left: 7px solid #dfb9ec; border-top: 7px solid transparent; border-bottom: 7px solid transparent; top: 50%; transform: translate(7px, -50%); right: 0; transition: all .3s ease;}
+.navbar .nav-menu li .dot.active span,
+.navbar .nav-menu li:hover .dot span {transform: translateX(0px); opacity: 1;}
+/* End Nav Styles */
+
+/* Start section1 */
+#section1 {width: 100%; height: 100%; background: url(https://images.pexels.com/photos/891683/pexels-photo-891683.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center; background-size: cover;}
+#section1 .content-wrapper {min-height: 950px;}    
+#section1 button {border: 2px solid #fff; background-color: transparent; outline: none; cursor: pointer; padding: 14px 40px; font-weight: 700; font-family: 'Poppins', sans-serif; transition: all .3s ease; margin-top: 20px; color: #fff;}
+#section1 button:hover {background-color: #fff; color: #ff6f6f;}
+/* #section1 .content {color: #fff;} */
+/* End section1 */
+
+/* Start section2 */
+#section2 .content-wrapper {min-height: 600px;}    
+/* End section2 */
+
+/* Start section3 */
+#section3 {background-color: #ece3ef;}
+#section3 .content-wrapper {min-height: 950px;}
+/* End section3 */
+
+/* Start section4 */
+#section4 .content-wrapper {min-height: 400px;}
+/* End section4 */
+
+/* Start section5 */
+#section5 {background-color: #666; color: #fff;}
+#section5 .content-wrapper {min-height: 600px;}
+/* End section5 */
+
+/* Start Footer */
+footer {padding: 40px 0; background-color: #333; color: #fff;}
+/* End Footer */
+    </style>
+</head>
+<body>
+   <!-- Start navbar -->
+<nav id="navbar" class="navbar">
+    <ul class="nav-menu">
+        <li>
+            <a data-scroll="section1" href="#section1" class="dot active">
+                <span>Section1</span>
+            </a>
+        </li>
+        <li>
+            <a data-scroll="section2" href="#section2" class="dot">
+                <span>Section2</span>
+            </a>
+        </li>
+        <li>
+            <a data-scroll="section3" href="#section3" class="dot">
+                <span>Section3</span>
+            </a>
+        </li>
+        <li>
+            <a data-scroll="section4" href="#section4" class="dot">
+                <span>Section4</span>
+            </a>
+        </li>
+        <li>
+            <a data-scroll="section5" href="#section5" class="dot">
+                <span>Section5</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<!-- End navbar -->
+
+<!-- Start Section1 -->
+<section id="section1">
+    <div class="container">
+        <div class="content-wrapper text-center">
+            <div class="content">
+                <h1>SECTION 1</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <button>BUTTON</button>
+            </div>
+        </div>  
+    </div>
+</section>
+<!-- End Section1 -->
+
+<!-- Start Section2 -->
+<section id="section2">
+    <div class="container">
+        <div class="content-wrapper text-center">
+            <div class="content">
+                <h3>SECTION 2</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>  
+    </div>
+</section>
+<!-- End Section2 -->
+
+<!-- Start Section3 -->
+<section id="section3">
+    <div class="container">
+        <div class="content-wrapper text-center">
+            <div class="content">
+                <h3>SECTION 3</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>  
+            </div>
+        </div>
+    </div>
+</section>  
+<!-- End Section3 -->
+
+<!-- Start Section4 -->
+<section id="section4">
+    <div class="container">
+        <div class="content-wrapper text-center">
+            <div class="content">
+                <h3>SECTION 4</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>    
+            </div>
+        </div>          
+    </div>
+</section>
+<!-- End Section4 -->
+
+<!-- Start Section5 -->
+<section id="section5">
+    <div class="container">
+        <div class="content-wrapper text-center">
+            <div class="content">
+                <h3>SECTION 5</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>     
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Section5 -->
+
+
+<!-- Start Footer Section -->
+<footer>
+  <div class="container text-center">
+    <h3>footer</h3>
+  </div>
+</footer>
+<!-- End Footer Section -->
+
+    <script>
+       $(function() {
+
+        var link = $('#navbar a.dot');
+
+        // Move to specific section when click on menu link
+        link.on('click', function(e) {
+        var target = $($(this).attr('href'));
+        $('html, body').animate({
+        scrollTop: target.offset().top
+        }, 800);
+        $(this).addClass('active');
+        e.preventDefault();
+        });
+
+        // Run the scrNav when scroll
+        $(window).on('scroll', function(){
+        scrNav();
+        });
+
+        // scrNav function 
+        // Change active dot according to the active section in the window
+        function scrNav() {
+        var sTop = $(window).scrollTop();
+        $('section').each(function() {
+        var id = $(this).attr('id'),
+            offset = $(this).offset().top-1,
+            height = $(this).height();
+        if(sTop >= offset && sTop < offset + height) {
+            link.removeClass('active');
+            $('#navbar').find('[data-scroll="' + id + '"]').addClass('active');
+        }
+        });
+        }
+        scrNav();
+        });
+    </script>
+</body>
+</html>
+
+<!-- https://codepen.io/guribbobbo/pen/dmdWYz -->

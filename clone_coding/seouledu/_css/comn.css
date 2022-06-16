@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/* 헤더 푸터 등 메인 서브 공통 부분 */
+
+@keyframes scroll {
+    0% {transform:  translateY(11px);}
+    50% {transform:  translateY(27px);}
+    100% {transform:  translateY(11px);}
+}
+
+@media only screen and (min-width: 1500px) {
+
+.web    {display: block !important;}
+.mobile {display: none;}
+.tablet {display: none;}
+.mo     {display: none !important;}
+.ta     {display: none !important;}
+
+#visual {width: 100%; background: url('../_img/pc/main/visual03.png') no-repeat 50% 0%;}
+
+}
