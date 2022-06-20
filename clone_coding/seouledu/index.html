@@ -1,8 +1,133 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <? include "_inc/title.html"; ?>
-    <script></script>
+    <meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./_css/comn.css" />
+	<link rel="stylesheet" type="text/css" href="./_css/default.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="./_js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./_js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="./_js/slick.css">
+	<link rel="stylesheet" type="text/css" href="./_js/slick-theme.css">
+	<link rel="stylesheet" type="text/css" href="./_js/swiper.min.css">
+	<link rel="preload" as="script" href="./_js/critical.js">
+
+	<title>서울특별시교육감 조희연 (취임 3주년)</title>
+
+	<script>
+		// -- pc only --
+		$(function(){
+			//히스토리 버튼 on
+			$('.year_box p a').clicl(function(){
+				$('.year_box p a').removeClass('active')
+				$(this).addClass('active')
+			})
+		});
+
+		$(window).on('scroll', function() {
+			//히스토리 위치 고정
+			//var height = $(document).scrollTop();
+			if ($(this).scrollTop() > 840) {
+				$('.left').addClass('on');
+			} else {
+				$('.left').removeClass('on');
+			}
+
+			if ($(this).scrollTop() > 5540) {
+				$('.left').addClass('on_fixed');
+			} else {
+				$('.left').removeClass('on_fixed');
+			}
+
+			//히스토리 이동
+			$('.target').each(function() {
+				if($(window).scrollTop() >= $(this).offset().top) {
+					const id = $(this).attr('id');
+					$('.year_box p a').removeClass('active');
+					$('.year_box p a[href=#' + id + ']').addClass('active');
+				}
+			});
+		});
+
+		// ----------------------------------------------------------------------- TA
+		// TA
+		$(function(){
+			$('.ta_year_box p a').click(function() { 
+				$('html, body').animate({ 
+					scrollTop: $($.attr(this, 'href')).offset().top + 1 + 'px'
+				}, 0); 
+
+				$('.ta_year_box p a').removeClass('active')
+				$(this).addClass('active')
+
+				return false; 
+			});
+		});
+
+		$(window).on('scroll', function() {
+			$('.ta_target').each(function() {
+				if($(window).scrollTop() >= $(this).offset().top) {
+					var id = $(this).attr('id');
+					$('.ta_year_box p a').removeClass('active');
+					$('.ta_year_box p a[href=#' + id +']').addClass('active');
+				}
+			});
+		});
+
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 500 && $(this).scrollTop() < 5000) {
+				$('.ta_year_box').fadeIn();
+			} else {
+				$('.ta_year_box').stop().fadeOut();
+			}
+		});
+
+		// ----------------------------------------------------------------------- MO
+		// MO
+		$(function(){
+
+			$('.mo_year_box p a').click(function() { 
+				$('html, body').animate({ 
+					scrollTop: $($.attr(this, 'href')).offset().top  + 1 + 'px'
+				}, 0); 
+
+				$('.mo_year_box p a').removeClass('active')
+				$(this).addClass('active')
+
+				return false; 
+			});
+
+		});
+
+		$(window).on('scroll', function() {
+			$('.mo_target').each(function() {
+				if($(window).scrollTop() >= $(this).offset().top) {
+					var id = $(this).attr('id');
+					$('.mo_year_box p a').removeClass('active');
+					$('.mo_year_box p a[href=#' + id +']').addClass('active');
+				}
+			});
+		});
+
+
+		$(document).ready(function() {
+			$('.mo_year_box').hide();
+		});
+
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 500 && $(this).scrollTop() < 5600) {
+				$('.mo_year_box').fadeIn();
+				//$( '.mo_year_box' ).css( 'display', 'block' );
+			} else {
+				$('.mo_year_box').stop().fadeOut();
+			}
+		});
+	</script>
+
 </head>
 <body>
     <div id="visual">
@@ -1125,7 +1250,7 @@
 
         <ul class="news_list">
             <li onclick="window.open('https://enews.sen.go.kr/news/view.do?bbsSn=170637&step1=3&step2=1.html')">
-                <p class="img"></p>
+                <p class="img"><img src="_img/pc/main/news_img01.png" alt="함께한 3년"></p>
                 <div>
 					<p class="cate">
 					 보편적 교육복지 실현
@@ -1385,5 +1510,48 @@
         </div>
     </footer>
 </body>
+<script>
+	var imgSlick = $('.img_slick');
+
+	//비주얼 슬라이드 카운트
+	imgSlick.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+	var i = (currentSlide ? currentSlide : 0) + 1;
+	$('.slide').find('.slideCount').html('<span class="slideCountItem">' +i + '</span> ' + '/ ' + ' <span class="slideCountAll">' + slick.slideCount + '</span>');
+	});
+
+	$(document).ready(function(){
+		//슬로건
+		$('.img_slick'),slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			infinite: true,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			centerMode: true,
+			draggable: false,
+			responsive: [ // 반응형 웹 구현 옵션
+					{  
+						breakpoint: 1501,
+						settings: {
+							slidesToShow:3
+						} 
+					},
+					{ 
+						breakpoint: 1500,
+						settings: {	
+							//centerMode:false,
+							slidesToShow:1
+						} 
+					},
+					{ 
+						breakpoint: 650,
+						settings: {	
+							slidesToShow:1
+						} 
+					}
+				]
+		})
+	})
+</script>
 </html>
 <!-- http://sian.pms.or.kr/seouledu/html/index.html -->
