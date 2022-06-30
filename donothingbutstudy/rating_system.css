@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+#myform fieldset            {display: inline-block; direction: rtl; border: 0;}
+#myform fieldset legend     {text-align: left;}
+#myform input[type=radio]   {display: none; cursor: pointer;}
+#myform label               {font-size: 3em; color: transparent; cursor:pointer; text-shadow: 0 0 0 #ddd;}
+#myform label:hover         {text-shadow: 0 0 0 rgb(250, 163, 32); transition: all ease 0.2s;}
+#myform label:hover ~ label {text-shadow: 0 0 0 rgb(250, 163, 32);}
+#myform input[type=radio]:checked ~ label {text-shadow: 0 0 0 rgb(250, 163, 32);}
