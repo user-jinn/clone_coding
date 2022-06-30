@@ -69,20 +69,20 @@ toggle function : it checks class name is exists. adds token if it doesn't have 
 
 */
 
-const new = document.querySelector("div.newer");
+const newww = document.querySelector("div.newer");
 
 function newFunction() {
     const clickedClass = "clicked";
-    if (new.classList.contains(clickedClass)) {
-        new.classList.remove(clickedClass);
+    if (newww.classList.contains(clickedClass)) {
+        newww.classList.remove(clickedClass);
     } else {
-        new.classList.add(clickedClass);
+        newww.classList.add(clickedClass);
     }
 } // and toggle element's role is same as this if else elements role.
 //how to use is down below
 
-new.addEventListener("click", newFunction);
+newww.addEventListener("click", newFunction);
 
 function newerFunction(){
-    new.classList.toggle("clicked");
+    newww.classList.toggle("clicked");
 }
