@@ -3,6 +3,7 @@ const loginInput = document.querySelector('#login-form input');
 const greeting = document.querySelector("#greeting");
 
 const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username" //this prevents the typo mistakes so js can notifies the alert that i have some issues...
 
 function onLoginSubmit(event) {
     /*
@@ -15,10 +16,28 @@ function onLoginSubmit(event) {
     event.preventDefault();
     loginForm.classList.add("hidden");
     const username = loginInput.value;
-    console.log(username);
-    // greeting.innerText = "Hello " + username;
-    greeting.innerText = `Hello ${username}`;
-    greeting.classList.remove();
+    localStorage.setItem(USERNAME_KEY, username);
+    paintGreetings(username);
 }
 
-loginButton.addEventListener("submit", onLoginSubmit);
+//setItem : an element that saves something...
+//ex1: localStroage.getItem("username")
+//ex2: localStroage.removeItem("username")
+
+function paintGreetings(username){
+    greeting.innerText = `Hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) {
+    //shows the form
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginButton.addEventListener("submit", onLoginSubmit);
+} else {
+    //shows the greetings
+   paintGreetings(savedUsername);
+}
+
+//nothing but rubbish: i just want to go home
