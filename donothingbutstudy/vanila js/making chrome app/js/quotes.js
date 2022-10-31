@@ -52,7 +52,7 @@ Math.ceil(1.01) 2
 Math.floor(1.9) 1
 */
 
-const todaysQuotes = quotes[Math.floor(Math.random() * quotes.length)]);
+const todaysQuotes = quotes[Math.floor(Math.random()) * (quotes.length)]);
 
 quote.innterText = todaysQuote.quote;
 author.innerText = todaysQuote.author;
